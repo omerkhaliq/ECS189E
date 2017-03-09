@@ -30,6 +30,7 @@ public class TestInstructor {
     @Test
     public void testIClass() {
         this.admin.createClass("Test", 2017, "Instructor", 15);
+        this.student.registerForClass("omer","Test",2017);
         this.instructor.addHomework("Instructor","Test",2017,"QUEST", "Big project, study hard");
         assertTrue(this.instructor.homeworkExists("Test",2017,"QUEST"));
     }
@@ -37,6 +38,7 @@ public class TestInstructor {
     @Test
     public void testIClass2() {
         this.admin.createClass("Test", 2017, "Instructor", 15);
+        this.student.registerForClass("omer","Test",2017);
         this.instructor.addHomework("Instructor","Test",2017,"QUEST", "Big project, study hard");
         this.instructor.assignGrade("Instructor","Test",2017,"QUEST", "omer", 100);
         int Pgrade = 100;
@@ -46,6 +48,7 @@ public class TestInstructor {
     @Test
     public void testIClass3() {
         this.admin.createClass("Test", 2017, "Instructor", 15);
+        this.student.registerForClass("omer","Test",2017);
         this.instructor.addHomework("Instructor2","Test",2017,"QUEST", "Big project, study hard");
         assertFalse(this.instructor.homeworkExists("Test",2017,"QUEST"));
     }
@@ -53,6 +56,7 @@ public class TestInstructor {
     @Test
     public void testIClass4() {
         this.admin.createClass("Test", 2017, "Instructor", 15);
+        this.student.registerForClass("omer","Test",2017);
         this.instructor.addHomework("Instructor","Test",2017,"QUEST", "Big project, study hard");
         this.student.submitHomework("omer","QUEST","this is answer","Test",2017);
         this.instructor.assignGrade("Instructor","Test",2017,"QUEST", "omer", 100);
@@ -63,6 +67,7 @@ public class TestInstructor {
     @Test
     public void testIClass5() {
         this.admin.createClass("Test", 2017, "Instructor", 15);
+        this.student.registerForClass("omer","Test",2017);
         this.instructor.addHomework("Instructor","Test",2017,"QUEST", "Big project, study hard");
         this.student.submitHomework("omer","QUEST","this is answer","Test",2017);
         this.instructor.assignGrade("Instructor2","Test",2017,"QUEST", "omer", 100);
